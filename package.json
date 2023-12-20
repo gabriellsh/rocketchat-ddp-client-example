@@ -14,9 +14,17 @@
     "@rocket.chat/core-typings": "6.3.7",
     "@rocket.chat/ddp-client": "0.1.7",
     "@rocket.chat/emitter": "^0.31.25",
+    "@rocket.chat/fuselage": "^0.40.0",
+    "@rocket.chat/fuselage-hooks": "^0.32.1",
+    "@rocket.chat/fuselage-polyfills": "^0.31.25",
+    "@rocket.chat/icons": "^0.32.0",
+    "@rocket.chat/layout": "^0.31.26",
+    "@rocket.chat/logo": "^0.31.28",
     "@rocket.chat/rest-typings": "6.3.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.5.0",
+    "react-virtuoso": "^4.6.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
