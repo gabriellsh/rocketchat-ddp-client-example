@@ -1,18 +1,47 @@
-export default function Login({ onLogin }: { onLogin: (username: string, password: string) => void }) {
-  return (
-    <form style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }} onSubmit={(e) => {
-        e.preventDefault();
-        const username = e.currentTarget.username.value;
-        const password = e.currentTarget.password.value;
+import { VerticalWizardLayout, Form } from '@rocket.chat/layout';
+import { RocketChatLogo } from '@rocket.chat/logo';
 
-        onLogin(username, password);
-    }}>
-        <h2>Login</h2>
-        <h3>Username</h3>
-        <input type="text" name="username" />
-        <h3>Password</h3>
-        <input type="password" name="password" placeholder='Password'/>
-        <button type="submit" >Login</button>
-    </form>
+import { Button, TextInput, PasswordInput, Field, FieldLabel, FieldRow, FieldGroup, ButtonGroup } from '@rocket.chat/fuselage'
+
+export default function Login({ onLogin }: { onLogin: (username: string, password: string) => void }) {
+  
+  return (
+    <VerticalWizardLayout
+			logo={<RocketChatLogo />}
+		>
+			<Form onSubmit={(e) => {
+          e.preventDefault();
+          const username = e.currentTarget.username.value;
+          const password = e.currentTarget.password.value;
+
+          onLogin(username, password);
+      }}>
+          <Form.Header>
+            <Form.Title id={'login'}>Login</Form.Title>
+          </Form.Header>
+          {/* @ts-expect-error this component accepts children but somehow types are failing */}
+          <Form.Container>
+            <FieldGroup>
+              <Field>
+                <FieldLabel>Username</FieldLabel>
+                <FieldRow>
+                  <TextInput name="username" placeholder='Username' />
+                </FieldRow>
+              </Field>
+              <Field>
+                <FieldLabel>Password</FieldLabel>
+                <FieldRow>
+                  <PasswordInput name="password" placeholder='Password'/>
+                </FieldRow>
+              </Field>
+            </FieldGroup>
+          </Form.Container>
+          <Form.Footer>
+            <ButtonGroup w='full' align='end'>
+              <Button type="submit" primary>Login</Button>
+            </ButtonGroup>
+          </Form.Footer>
+      </Form>
+		</VerticalWizardLayout>
   );
 }
