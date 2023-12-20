@@ -3,6 +3,9 @@ import { useState } from "react";
 
 import Login from "../components/Login";
 import Room from "../components/Room";
+import Page from './Page';
+import RoomList from './RoomList';
+import { Box, Button } from '@rocket.chat/fuselage';
 
 // TODO Add entry to docs about emitter being a peer dependency
 
@@ -49,6 +52,7 @@ const login = async (username: string, password: string, sdk: DDPSDK) => {
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [roomId, setRoomId] = useState('GENERAL');
 
   if (!loggedIn) {
     return <Login onLogin={async (username, password) => {
@@ -59,13 +63,20 @@ export default function App() {
 
   // We can check the status of the connection to make sure the websocket is connected to the server
   if (sdk.connection.status !== 'connected') {
-    return <div>
-      <div>SDK not Connected</div>
-      <button onClick={() => {
-        setLoggedIn(false);
-      }}>Retry connection</button>
-    </div>;
+    return <Page flexDirection='column'>
+      <Box is='h1' alignSelf='center' pbs={64} pbe={8}>SDK not Connected</Box>
+      <Box alignSelf='center'>
+        <Button primary onClick={() => {
+          setLoggedIn(false);
+        }}>
+          Retry connection
+        </Button>
+      </Box>
+    </Page>;
   }
 
-  return <Room id='GENERAL' sdk={sdk}/>
+  return <Page>
+      <RoomList setRoomId={setRoomId} sdk={sdk} roomId={roomId}/>
+      <Room sdk={sdk} id={roomId} />
+    </Page>
 }

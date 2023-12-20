@@ -1,4 +1,5 @@
 import type { KeyboardEventHandler } from 'react';
+import { TextInput, Box } from '@rocket.chat/fuselage';
 
 export default function Composer ({ onSend }: { onSend: (msg: string) => Promise<void>}) {
     const send: KeyboardEventHandler<HTMLInputElement> = async (e) => {
@@ -7,5 +8,7 @@ export default function Composer ({ onSend }: { onSend: (msg: string) => Promise
             e.currentTarget.value = '';
         }
     }
-    return <input type="text" placeholder="Type a message" onKeyDown={send} />
+    return <Box w='full' p={16}>
+        <TextInput w='full' placeholder="Type a message" onKeyDown={send} />
+    </Box>
 }

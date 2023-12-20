@@ -1,5 +1,7 @@
 import type { DDPSDK } from '@rocket.chat/ddp-client';
+import { Box } from '@rocket.chat/fuselage';
 import { useEffect, useState } from "react";
+import Message from './Message';
 
 export default function Index({ sdk, roomId }: { sdk: DDPSDK, roomId: string }) {
   const [messages, setMessages] = useState(new Map());
@@ -19,10 +21,11 @@ export default function Index({ sdk, roomId }: { sdk: DDPSDK, roomId: string }) 
   }, [sdk, roomId]);
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+    <Box flexGrow={1}>
+      {messages.size === 0 && <Box is='p' pi={12} pb={4}>No messages yet</Box>}
       {Array.from(messages.values()).map((message) => {
-        return <p key={message._id}>{message.msg}</p>
+        return <Message message={message} key={message._id}/>
       })}
-    </div>
+    </Box>
   );
 }

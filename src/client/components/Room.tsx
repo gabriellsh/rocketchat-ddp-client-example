@@ -1,9 +1,14 @@
 import type { DDPSDK } from "@rocket.chat/ddp-client";
 import MessageList from "./MessageList";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Composer from './Composer';
+import { Box, Throbber } from '@rocket.chat/fuselage'
+import Header from './Header';
+
 
 export default function Room ({ sdk, id }: { sdk: DDPSDK, id: string }) {
+    const [roomData, setRoomData] = useState<Record<string, any>>();
+
     const onSend = useCallback(async (msg: string) => {
         try {
             // For using the REST API, you can use the `sdk.rest` property
@@ -18,8 +23,28 @@ export default function Room ({ sdk, id }: { sdk: DDPSDK, id: string }) {
             console.log(await (error as Response).json?.());
         }
     }, [sdk, id]);
-    return <div>
+
+    useEffect(() => {
+        const fetchRoomData = async () => {
+            const result = await sdk.rest.get('/v1/subscriptions.getOne', { roomId: id });
+            result.subscription && setRoomData(result.subscription);
+        }
+        fetchRoomData();
+    }, [sdk, id])
+
+    if (!roomData) {
+        return <Box flexGrow={1} flexShrink={1} flexDirection="column" display="flex" justifyContent="center">
+            <Box display="flex" flexDirection="column" justifyContent="center" height='full'>
+                <Throbber size={'x32'} /> 
+            </Box>
+        </Box>
+    }
+
+    return <Box flexGrow={1} flexShrink={1} flexDirection="column" display="flex">
+        <Header>
+            #{' '}{roomData.fname || roomData.name}
+        </Header>
         <MessageList sdk={sdk} roomId={id} />
         <Composer onSend={onSend}/>
-    </div>;
+    </Box>;
 }
