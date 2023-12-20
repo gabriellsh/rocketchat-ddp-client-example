@@ -4,7 +4,7 @@ export default function Login({ onLogin }: { onLogin: (username: string, passwor
         e.preventDefault();
         const username = e.currentTarget.username.value;
         const password = e.currentTarget.password.value;
-        console.log({username, password});
+
         onLogin(username, password);
     }}>
         <h2>Login</h2>
