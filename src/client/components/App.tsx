@@ -32,13 +32,27 @@ async function hashPassword(password: string): Promise<string> {
 const SERVER_URL = 'http://localhost:3000';
 const sdk = DDPSDK.create(SERVER_URL);
 
+sdk.rest.use(async function (request, next) {
+	try {
+		return await next(...request);
+	} catch (error) {
+		if (error instanceof Response) {
+			const e = await error.json();
+			throw e;
+		}
+
+		throw error;
+	}
+});
+
 // We can then use the SDK to login to the server
 const login = async (username: string, password: string, sdk: DDPSDK) => {
   try {
     await sdk.connection.connect();
     // The loginWithPassword method from the account module expects the password to be hashed with SHA-256
     // If login is successful, you can access the credentials by referencing `sdk.account.user`
-    await sdk.account.loginWithPassword(username, await hashPassword(password));
+    const loginResult = sdk.account.loginWithPassword(username, await hashPassword(password));
+    console.log('LOGIN RESULT', await loginResult);
 
     // If you have the user's token, you can use the loginWithToken method instead
     // Tip: If you're integrating Rocket.Chat you can generate user tokens using the REST API

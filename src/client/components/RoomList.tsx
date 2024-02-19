@@ -7,6 +7,7 @@ const RoomList = ({ sdk, setRoomId, roomId }: { roomId: string, sdk: DDPSDK; set
     const [subscriptions, setSubscriptions] = useState<Record<string, any>[]>([]);
 
     useEffect(() => {
+        console.log('SDK ACCOUNT', sdk.account.user);
         const fetchRooms = async () => {
             // Example fetching the list of all subscribed rooms.
             const result = await sdk.rest.get('/v1/subscriptions.get', {});
