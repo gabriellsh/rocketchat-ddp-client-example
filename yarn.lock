@@ -1507,22 +1507,22 @@
     "@react-types/overlays" "^3.8.4"
     "@react-types/shared" "^3.22.0"
 
-"@rocket.chat/api-client@0.1.7", "@rocket.chat/api-client@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@rocket.chat/api-client/-/api-client-0.1.7.tgz#2d67d62c364328c4b0d86463b5b9684c4ea807c2"
-  integrity sha512-9CM2MN6fZ8pM+Aex1DKtmGYSdXejeYmp2hAuB2XjQV7MnnwIKczAcFzMzAoF7pTovLWj0C9jmNycnEKFChyK3Q==
+"@rocket.chat/api-client@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@rocket.chat/api-client/-/api-client-0.1.20.tgz#f2b06400ce04f5801ae07e7c65ab826d39f6a7cd"
+  integrity sha512-oa898xz55YmULEM+3kJ/CUgD6gtSIrR3q9Xho1gKMNjVt2N8SY6ebvP4QKcWpxehnO4nOF82feY07zZV7ymBqw==
   dependencies:
-    "@rocket.chat/core-typings" "^6.3.7"
-    "@rocket.chat/rest-typings" "^6.3.7"
+    "@rocket.chat/core-typings" "^6.5.2"
+    "@rocket.chat/rest-typings" "^6.5.2"
     filter-obj "^3.0.0"
     query-string "^7.1.3"
     split-on-first "^3.0.0"
     strict-uri-encode "^2.0.0"
 
-"@rocket.chat/apps-engine@1.40.0":
-  version "1.40.0"
-  resolved "https://registry.yarnpkg.com/@rocket.chat/apps-engine/-/apps-engine-1.40.0.tgz#bb5b8fb2622bdfc41e69168ae41310ca85b54eff"
-  integrity sha512-gQvgA7EOMblJrBV/3dlrQO29k1xT+9JkW+XQYvZ+AGx6V9ljikPYRA1rOShdlUpthWJEhj20vuMc04n/wzmP4w==
+"@rocket.chat/apps-engine@1.41.0":
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/@rocket.chat/apps-engine/-/apps-engine-1.41.0.tgz#c0766ecdae1b0967980c15463fbdaa5e5c7826c3"
+  integrity sha512-l1JZrOKeFEShI1nWi6HkN4qY7zsUvAtO5Rq5GoDT/4cL+c75z01XBXdYEj/SY9n36OagNBqm5XmDhmsUmpJL3g==
   dependencies:
     adm-zip "^0.5.9"
     cryptiles "^4.1.3"
@@ -1530,18 +1530,18 @@
     lodash.clonedeep "^4.5.0"
     semver "^5.7.1"
     stack-trace "0.0.10"
-    uuid "^3.4.0"
+    uuid "~8.3.2"
     vm2 "^3.9.19"
 
-"@rocket.chat/core-typings@6.3.7", "@rocket.chat/core-typings@^6.3.7":
-  version "6.3.7"
-  resolved "https://registry.yarnpkg.com/@rocket.chat/core-typings/-/core-typings-6.3.7.tgz#e96ebcd5319efeb079f24511a7abff57c3a651ad"
-  integrity sha512-r54xDxAp6RYLpHF0lxd/Ylv363KFLeZ5/zSaS8LhQubc1FxjVqI1UemVyVuUVjI7HYhD49ppieO/sH+MW4Q5iA==
+"@rocket.chat/core-typings@^6.5.2":
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/@rocket.chat/core-typings/-/core-typings-6.5.2.tgz#5609427095063c14a1b72aa5ea249a7ed1ed5666"
+  integrity sha512-005UQ92feT2fxkQqopRO69o/XLo/Itfa/COlibixJROZACVvbX0xO2KBxHL788wYrg6iId0h0WVuskAgX9Najg==
   dependencies:
-    "@rocket.chat/apps-engine" "1.40.0"
-    "@rocket.chat/icons" "0.31.24"
-    "@rocket.chat/message-parser" "0.31.24"
-    "@rocket.chat/ui-kit" next
+    "@rocket.chat/apps-engine" "1.41.0"
+    "@rocket.chat/icons" "~0.32.0"
+    "@rocket.chat/message-parser" "~0.31.27"
+    "@rocket.chat/ui-kit" "~0.32.1"
 
 "@rocket.chat/css-in-js@^0.31.25":
   version "0.31.25"
@@ -1561,13 +1561,13 @@
   dependencies:
     "@rocket.chat/memo" "^0.31.25"
 
-"@rocket.chat/ddp-client@0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@rocket.chat/ddp-client/-/ddp-client-0.1.7.tgz#8b1a07b087865c609ea4c60cf7321f4a7e5c515f"
-  integrity sha512-K+Gtx+wp3e/lfnJqBkCZPGc+G5JFXGQbRYHG+wVyMYvMVYDPI2uJFUHQhOtr0kpEmBR3p7esrDsPbb71gLo01Q==
+"@rocket.chat/ddp-client@0.2.11":
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/@rocket.chat/ddp-client/-/ddp-client-0.2.11.tgz#bd4cc7a0a29fe7011f322824959a97170acd4bd5"
+  integrity sha512-IvbCmRihrHGhDaPZU6fanwDHPIMqucANz1oOe3g22SxdNwY2aMDi+nqrubVBANDyYWW+HfzB3OAwN+5//2i7DA==
   dependencies:
-    "@rocket.chat/api-client" "^0.1.7"
-    "@rocket.chat/rest-typings" "^6.3.7"
+    "@rocket.chat/api-client" "^0.1.20"
+    "@rocket.chat/rest-typings" "^6.5.2"
 
 "@rocket.chat/emitter@^0.31.25":
   version "0.31.25"
@@ -1613,12 +1613,7 @@
     react-keyed-flatten-children "^1.3.0"
     react-stately "~3.17.0"
 
-"@rocket.chat/icons@0.31.24":
-  version "0.31.24"
-  resolved "https://registry.yarnpkg.com/@rocket.chat/icons/-/icons-0.31.24.tgz#ad401fe553b4641b85efde6f74e9d451c617ab9a"
-  integrity sha512-42wV3I0hYWlE3bWJN5xK97FgIQP38smovb4mDqJgIA5hkI6Gs1vG9g7guI2zAQM6Xlp3xcvy1H1GAsRo1/zoqw==
-
-"@rocket.chat/icons@^0.32.0":
+"@rocket.chat/icons@^0.32.0", "@rocket.chat/icons@~0.32.0":
   version "0.32.0"
   resolved "https://registry.yarnpkg.com/@rocket.chat/icons/-/icons-0.32.0.tgz#26ee67d9f445ceb0d32a56f8b1e80c69d9c1d074"
   integrity sha512-7yhhELKNLb9kUtXCvau0V+iMXraV2bOsxcPjc/ZtLR5VeeIDTeaflqRWGtLroX6f3bE+J1n5qB5zi8A4YXuH2g==
@@ -1641,22 +1636,22 @@
   resolved "https://registry.yarnpkg.com/@rocket.chat/memo/-/memo-0.31.25.tgz#c1c52680b429596e410a9389314be6dad0c07741"
   integrity sha512-d5pbOMzFCOhW/+ju5lXc+2fnDrtk7v5asic8h8aAyGIoycWMy/YmDVmF7TK9zMs5iJ+cPf86KWkRI+ANl02KfA==
 
-"@rocket.chat/message-parser@0.31.24":
-  version "0.31.24"
-  resolved "https://registry.yarnpkg.com/@rocket.chat/message-parser/-/message-parser-0.31.24.tgz#adcfcde6b9fabbb8fb3ff895b79b02299e0491ac"
-  integrity sha512-jpw6FeWSSMykNQKjDV8YmK5Lh+83+qoftOJMDQWKfoAXGDXkgZsr3DKIiJe1PJ0fm0esQDkrSIr7Sym6Rd8shw==
+"@rocket.chat/message-parser@~0.31.27":
+  version "0.31.27"
+  resolved "https://registry.yarnpkg.com/@rocket.chat/message-parser/-/message-parser-0.31.27.tgz#a66b9bd149f1e50af6a1f775aa6b8715b1624f7b"
+  integrity sha512-h7NwObUo0NuSD+zlbjPo8r4wx7qA4qTLVRoyp32vHlFLkCx1t4Nl3uYP+pv/SSziw9bPzPQ0tnWNJMPjareVSQ==
   dependencies:
     tldts "~5.7.112"
 
-"@rocket.chat/rest-typings@6.3.7", "@rocket.chat/rest-typings@^6.3.7":
-  version "6.3.7"
-  resolved "https://registry.yarnpkg.com/@rocket.chat/rest-typings/-/rest-typings-6.3.7.tgz#d8e98faeb1ae774c741a37bd981de673f5074a76"
-  integrity sha512-Nv5iSu2r3zZ25d42DVrnkHstG2NoyAblF6axL0G8MBboyKYCA4mK20JU/TraFtIfglPrzuprHiJtwzf51JvCgQ==
+"@rocket.chat/rest-typings@^6.5.2":
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/@rocket.chat/rest-typings/-/rest-typings-6.5.2.tgz#cd656f2b87cdfc31111fdcd83c711e5ed9c411b8"
+  integrity sha512-rdFUfZ/znfAgmw5z5PYzHdvkeYeXjXva3tkAllKiWPb0xWv3ryPjQZMNpqC4jbvKuwUFrg/CxOHxDebP4o8zOQ==
   dependencies:
-    "@rocket.chat/apps-engine" "1.40.0"
-    "@rocket.chat/core-typings" "^6.3.7"
-    "@rocket.chat/message-parser" "0.31.24"
-    "@rocket.chat/ui-kit" next
+    "@rocket.chat/apps-engine" "1.41.0"
+    "@rocket.chat/core-typings" "^6.5.2"
+    "@rocket.chat/message-parser" "~0.31.27"
+    "@rocket.chat/ui-kit" "~0.32.1"
     ajv "^8.11.0"
     ajv-formats "^2.1.1"
 
@@ -1674,10 +1669,10 @@
   dependencies:
     "@rocket.chat/css-supports" "^0.31.25"
 
-"@rocket.chat/ui-kit@next":
-  version "0.32.0-dev.370"
-  resolved "https://registry.yarnpkg.com/@rocket.chat/ui-kit/-/ui-kit-0.32.0-dev.370.tgz#8bbdb96bb891afe72c2d204f99a77339175ea362"
-  integrity sha512-oFwg3MAaUzpqCItMFb6rpPMn7hb0DAU/QjpyjW5a9vWiVPP7vv3OOkRejfsISNW600OtLwtxHULHZS7DssySKA==
+"@rocket.chat/ui-kit@~0.32.1":
+  version "0.32.1"
+  resolved "https://registry.yarnpkg.com/@rocket.chat/ui-kit/-/ui-kit-0.32.1.tgz#13dc555d54e3d70ef97535ca9372daf4066929db"
+  integrity sha512-z7rUe62CWZY/9dS+HeSMZhOnhh8oQUE8Cwa6s86y3F9TW4yAxAElTL6yB8GEwoemqYE+4AIyB8UefzfphtEiIg==
 
 "@rollup/rollup-android-arm-eabi@4.9.1":
   version "4.9.1"
@@ -3170,10 +3165,10 @@ use-sync-external-store@~1.2.0:
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
-uuid@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
-  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+uuid@~8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 vite@^5.0.8:
   version "5.0.10"
